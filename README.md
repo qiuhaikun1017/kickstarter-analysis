@@ -26,7 +26,7 @@ According to the chart, the number of successful outcome hits the peak at May, w
 #### Challenges and Difficulties Encountered for Part1
 However this graph does not tell us how specifically in each year the tendency of successful outcome has changed. For example, in certain year like 2009, there is no theatre shows has been fundraised, while from 2011 to 2013 all theatre campaigns are successful. But as we are in year of 2020, is the data from 10 years ago still relevant to us? How the tendency in recent year tells us the story? To answer this question, We added the value of “Year” in the axis (Category), and we placed its order before “Date Created” so the graph shows the X-axis as the month of each year as below. 
 
-![Theater Outcomes over Years](Picture1.png)
+![Theater Outcomes over Years](Chanllenge1.png)
 
 It is clearly from the above chart that the number of successful outcome steadily remains below 5 per year from 2010 to 2013. Then in May of 2014, the total project of theatre shows dramatically climbed to 71, with 38 of them are successful. Followed by 2015, the magic May continues its legendary and achieved the highest number of successful campaign in that year. However, in both year 2015 and 2016, it is noticed that short after May, in June, the number of successful dropped dramatically and in March 2015 and Oct 2015 the failed counts outnumbers the successful number. **Overall, the Toal number of campaign and the number of successful campaigns shows a tendency of decreasing since 2016, _while the successful number remains higher than the failed ones at each month_**. 
  
@@ -38,6 +38,8 @@ In the second part of our research, we set up 12 intervals for goal amount range
 >```=COUNTIFS(Sheet1!$D:$D, "<1000",Sheet1!$P:$P,"plays",Sheet1!$F:$F,"successful")```
 
 Same logic applies to other cells. We collected a table of 36 data, which are the number under each goal amount range for outcome "successful", "canceled" and "failed". To summarize insightful information, we calculated the percentage of successful, failed and canceled under each goal amount range. And made the following line charts to show the trends. 
+
+![Outcomes_vs_Goals](Outcomes_vs_Goals.png)
 
 As shown from this chart, 75.8% of projects that is less than $1000 has a successful result from its campaign, which the percentage is the highest among all the goal amount range. The lowest rate of successful happened in the interval greater than $45000 and less than $49999, which is 0. It is interesting to notice that in the range from $1000-$4999 and $35000 to $44999, the probability of having a successful outcome is about 66.67% to 75.81%, which is superior than the other range.
 
@@ -58,7 +60,7 @@ One technical difficulty is that: when I were using the COUNTIFS function to inp
 
 ### What can you conclude about the Outcomes based on Goals?
 
-We can assume that if the goal ammount is setting at less than $4999, the campaign will more likely to be successfuly
+We can assume that if the goal amount is setting at less than $4999, the campaign will more likely to be successfuly
 
 ### What are some limitations of this dataset?
 1) The sample size is relatively small for category theatre. Only 1393 data are given in this task. In some year for example 2009, there is no theatre campaign was initiated.  
@@ -68,5 +70,7 @@ We can assume that if the goal ammount is setting at less than $4999, the campai
 ### What are some other possible tables and/or graphs that we could create?
 
 When we examined the outcome based on goal amount, I noticed that some of the percentages may not be legit value to be used for this research. For example there is only 1 project in the range from $45000 to $49999 and it failed. Is this 0% successful rate actually valid? To answer this question and add more information, I created additional bar chart by inputing the number of outcomes and its corresponding range. 
+
+![Additonal Graph](Chanllenge2.png)
 
 The above bar chart tells us that the range from $1000 to $4999 has the most total number of projects, which is 553. When the goal amount is over $5000, the total project number starts to decrease and the number of successful and fail outcomes tends to be closed. It is interesting to advise that from the given database there is a noticeable more projects once the goal amount reached over $50000, with a total number of 16 projects and 14 of them failed. Overall, for project’s goal amount under $5000, the successful number is more than the failed number . 
