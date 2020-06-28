@@ -1,4 +1,4 @@
-# kickstarter-analysis
+# Kickstarter-Analysis
 Performing data analysis to uncover trends
 ## Overview of Project
 ### Purpose
