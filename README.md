@@ -24,7 +24,7 @@ After the data is clean and ready to be analyzed, we use pivotable as the tool t
 According to the chart, the number of successful outcome hits the peak at May, which arrived 111. The least number of successful number happens in Dec, which is still higher than the number of failed and canceled at Dec. Furthermore, the overall count of successful outcome is higher than the overall count of failed and canceled respectively at each month.
 
 #### Challenges and Difficulties Encountered for Part1
-However this graph does not tell us how specifically in each year the tendency of successful outcome has changed. For example, in certain year like 2009, there is no theatre shows has been fundraised, while from 2011 to 2013 all theatre campaign is successful. But in year 2020, is the data from 10 years ago still relevant to us? How the tendency in recent year tells us the story? To answer this question, We added the value of “Year” in the axis (Category), and we placed its order before “Date Created” so the graph shows the X-axis as the month of each valid year as below. 
+However this graph does not tell us how specifically in each year the tendency of successful outcome has changed. For example, in certain year like 2009, there is no theatre shows has been fundraised, while from 2011 to 2013 all theatre campaigns are successful. But as we are in year of 2020, is the data from 10 years ago still relevant to us? How the tendency in recent year tells us the story? To answer this question, We added the value of “Year” in the axis (Category), and we placed its order before “Date Created” so the graph shows the X-axis as the month of each year as below. 
 
 ![Theater Outcomes over Years](Picture1.png)
 
@@ -42,18 +42,31 @@ Same logic applies to other cells. We collected a table of 36 data, which are th
 As shown from this chart, 75.8% of projects that is less than $1000 has a successful result from its campaign, which the percentage is the highest among all the goal amount range. The lowest rate of successful happened in the interval greater than $45000 and less than $49999, which is 0. It is interesting to notice that in the range from $1000-$4999 and $35000 to $44999, the probability of having a successful outcome is about 66.67% to 75.81%, which is superior than the other range.
 
 ### Challenges and Difficulties Encountered for Part2
-But a question will be quickly raised: do we really look at the full picture of the whole story? For example there is only 1 project in the range from $45000 to $49999 and it failed. Is this 0% successful rate actually valid? To answer this question and add more information, we created additional bar chart by inputing the number of outcomes and its corresponding range. 
 
-The above bar chart tells us that the range from $1000 to $4999 has the most total number of projects, which is 553. When the goal amount is over $5000, the total project number starts to decrease and the number of successful and fail outcomes tends to be closed. It is interesting to advise that from the given database there is a noticeable more projects once the goal amount reached over $50000, with a total number of 16 projects and 14 of them failed. Overall, for project’s goal amount under $5000, the successful number is more than the failed number . 
+One technical difficulty is that: when I were using the COUNTIFS function to input data, I find it is frustrating to manually change the goal amount in the condition for every cell. For example, I need to change the condition “<=number” every time when I moved to the next cell. And I cannot just simply drag the function to the next row’s cell as different rows are corresponding to different value range. I tried to google for the code to extract the value from the “goal” column by setting a function to copy the value before dash and paste into the condition. For example, copy “1000” from “1000 - 4999”. But then I stopped doing so because I find it is very time consuming. I wonder if there is better way to improve this process as in real life we may face dataset has many value and it is not the best way to manually change it.
 
 
 
 ## Results
 
-- What are two conclusions you can draw about the Outcomes based on Launch Date?
+### What are two conclusions you can draw about the Outcomes based on Launch Date?
 
-- What can you conclude about the Outcomes based on Goals?
+1) The number of successful fundraising campaign tends to be higher in spring and summer, and tends to fall down in winter time. It will usually hit to the peak point in month of May then decrease to the lowest point in Dec. We would assume that setting launch date in May will likely have a higher possibility to be successful.
 
-- What are some limitations of this dataset?
+2) the trends of successful outcome changes every 4 years. Data shows from 2009 to 2013, the successful numbers remains flat, while from 2014 to 2017 its starts to fluctuate dramatically during a year. 
 
-- What are some other possible tables and/or graphs that we could create?
+
+### What can you conclude about the Outcomes based on Goals?
+
+We can assume that if the goal ammount is setting at less than $4999, the campaign will more likely to be successfuly
+
+### What are some limitations of this dataset?
+1) The sample size is relatively small for category theatre. Only 1393 data are given in this task. In some year for example 2009, there is no theatre campaign was initiated.  
+
+2) The sample is relatively “old” - the database shows number from year 2009 to 2017. As we mentioned before in the challenge part A, the trends change over the years. For example from 2009 to 2013, the successful numbers remains flat, while from 2014 it starts to fluctuate. So more recent datasets will help us to determine the current trend and estimate the upcoming tendency. 
+  
+### What are some other possible tables and/or graphs that we could create?
+
+When we examined the outcome based on goal amount, I noticed that some of the percentages may not be legit value to be used for this research. For example there is only 1 project in the range from $45000 to $49999 and it failed. Is this 0% successful rate actually valid? To answer this question and add more information, I created additional bar chart by inputing the number of outcomes and its corresponding range. 
+
+The above bar chart tells us that the range from $1000 to $4999 has the most total number of projects, which is 553. When the goal amount is over $5000, the total project number starts to decrease and the number of successful and fail outcomes tends to be closed. It is interesting to advise that from the given database there is a noticeable more projects once the goal amount reached over $50000, with a total number of 16 projects and 14 of them failed. Overall, for project’s goal amount under $5000, the successful number is more than the failed number . 
