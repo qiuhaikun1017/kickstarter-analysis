@@ -55,12 +55,11 @@ One technical difficulty is that: when I were using the COUNTIFS function to inp
 
 1) The number of successful fundraising campaign tends to be higher in spring and summer, and tends to fall down in winter time. It will usually hit to the peak point in month of May then decrease to the lowest point in Dec. We would assume that setting launch date in May will likely have a higher possibility to be successful.
 
-2) the trends of successful outcome changes every 4 years. Data shows from 2009 to 2013, the successful numbers remains flat, while from 2014 to 2017 its starts to fluctuate dramatically during a year. 
+2) the trends of successful outcome changes in every 4 years. Data shows from 2009 to 2013, the successful numbers remains flat, while from 2014 to 2017 its starts to fluctuate dramatically during a year. 
 
 
 ### What can you conclude about the Outcomes based on Goals?
-
-We can assume that if the goal amount is setting at less than $4999, the campaign will more likely to be successfuly
+From our research, we can notice that in certain goal amount range, the number of successful outcome is higher than the other ranges. According to the given dataset, We can assume that if the goal amount is setting at less than $4999, the campaign will more likely to be successfuly
 
 ### What are some limitations of this dataset?
 1) The sample size is relatively small for category theatre. Only 1393 data are given in this task. In some year for example 2009, there is no theatre campaign was initiated.  
