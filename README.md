@@ -62,7 +62,7 @@ One technical difficulty is that: when I were using the COUNTIFS function to inp
 From our research, we can notice that in certain goal amount range, the number of successful outcome is higher than the other ranges. According to the given dataset, We can assume that if the goal amount is setting at less than $4999, the campaign will more likely to be successfuly
 
 ### What are some limitations of this dataset?
-1) The sample size is relatively small for category theatre. Only 1393 samples are given in this task. In some year for example 2009, there is no theatre campaign was initiated.  
+1) The sample size is relatively small for category theatre. Only 1393 samples are given in this task. In some year for example 2009, there is no theatre campaign was initiated. Small sample size will likely not represent the full pitcure and lead us to a wrong estimation on the result. 
 
 2) The sample is relatively “old” - the database shows number from year 2009 to 2017. As we mentioned before in the challenge part A, the trends change over the years. For example from 2009 to 2013, the successful numbers remains flat, while from 2014 it starts to fluctuate. So more recent datasets will help us to determine the current trend and estimate the upcoming tendency. 
   
