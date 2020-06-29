@@ -8,23 +8,23 @@ A fund-raising campaign is initiated by a play-writer, Louise, for her upcoming 
 
 ## Analysis and Challenges
 
-To help Louise, this research is conducted based on a dataset of a sample of 4114 campaign projects. The dataset consists of valuable information of past campaign projects, which includes their: fundraising goal amount, the actual pledged amount, the campaign’s launch date and its ended date, the projects’ category, the country and the campaign’s outcome ( “successful”, “failed”, “live” or “cancelled”). We used Excel as the tool for examining this task and visualizing our result so the data can be more easily understood by a non-data analysis background individuals like Louise. 
+To help Louise, this research is conducted based on a dataset of a 4114 campaign projects samples. The dataset consists of valuable information of past campaign projects, which includes their: fundraising goal amount, the actual pledged amount, the campaign’s launch date and its ended date, the projects’ category, the country and the campaign’s outcome ( “successful”, “failed”, “live” or “cancelled”). We used Excel as the tool for examining this task and visualizing our result so the data can be more easily understood by a non-data analysis background individuals like Louise. 
 
 ### Part 1: Analysis of Outcomes Based on Launch Date
 
-In the first part of our analysis, we focused on examining the change of number of outcomes based on the launch date, specifically we are looking at each month how the outcomes fluctuate. We begin our analysis by first reforming the data of launch date into regular “Year-Month-Day” form as the raw data included in the initial data sheet are in a form of “unix timestamp”, a form of expressing time into the number of second that have been spent since Jan 1st, 1970. We created a column called “Date created” by using the below codes:
+In the first part of our analysis, we focused on examining the change of outcomes number based on the launch date, specifically we are looking at how the outcomes fluctuate at each month . We begin our analysis by first reforming the data of launch date into regular “Year-Month-Day” form as the raw data included in the initial data sheet are in a form of “unix timestamp”, a form of expressing time into the number of second that have been spent since Jan 1st, 1970. We created a column called “Date created” by using the below codes:
 >```=(((unix number/60)/60/24)+DATE(1970,1,1))``` 
 
 to covert the unix form into date form and then formatted in date form. And then we created a new column called “Year” to extract the year of the “Date Created” column so that we are able to identify the range of year and later on use it as a filter when we organize the date. 
 
-After the data is clean and ready to be analyzed, we use pivotable as the tool to conduct our research. The number of outcomes and its corresponding date are inputted into pivotable and “Year” and “Category” are used as filter. The below line chat shows that the fluctuation of outcomes for theatre campaign based on month from 2009 to 2017. Please note that label of each month means the total outcome of each month over the duration. For example, the number shown under “Jan”, means the total number of outcome for all the “Jan” from 2009 to 2017. 
+After the data is clean and ready to be analyzed, we use pivotable as the tool to conduct our research. The number of outcomes and its corresponding date are inputted into pivotable and “Year” and “Category” are used as filters. The below line chat shows that the fluctuation of outcomes for theatre campaign based on month from 2009 to 2017. Please note that label of each month means the total outcome of each month over the duration. For example, the number shown under “Jan”, means the total number of outcome for all the “Jan” from 2009 to 2017. 
 
 ![Theater_Outcomes_vs_Launch](Theater_Outcomes_vs_Launch.png)
 
 According to the chart, the number of successful outcome hits the peak at May, which arrived 111. The least number of successful number happens in Dec, which is still higher than the number of failed and canceled at Dec. Furthermore, the overall count of successful outcome is higher than the overall count of failed and canceled respectively at each month.
 
 #### Challenges and Difficulties Encountered for Part1
-However this graph does not tell us how specifically in each year the tendency of successful outcome has changed. For example, in certain year like 2009, there is no theatre shows has been fundraised, while from 2011 to 2013 all theatre campaigns are successful. But as we are in year of 2020, is the data from 10 years ago still relevant to us? How the tendency in recent year tells us the story? To answer this question, We added the value of “Year” in the axis (Category), and we placed its order before “Date Created” so the graph shows the X-axis as the month of each year as below. 
+However this graph does not tell us how specifically the tendency of successful outcome has changed in each year. For example, in certain year like 2009, there is no theatre shows has been fundraised, while from 2011 to 2013 all theatre campaigns are successful. But as we are in year of 2020, is the data from 10 years ago still relevant to us? How the tendency in recent year tells us the story? To answer this question, We added the value of “Year” in the axis (Category), and we placed its order before “Date Created” so the graph shows the X-axis as the month of each year as below. 
 
 ![Theater Outcomes over Years](Chanllenge1.png)
 
@@ -62,7 +62,7 @@ One technical difficulty is that: when I were using the COUNTIFS function to inp
 From our research, we can notice that in certain goal amount range, the number of successful outcome is higher than the other ranges. According to the given dataset, We can assume that if the goal amount is setting at less than $4999, the campaign will more likely to be successfuly
 
 ### What are some limitations of this dataset?
-1) The sample size is relatively small for category theatre. Only 1393 data are given in this task. In some year for example 2009, there is no theatre campaign was initiated.  
+1) The sample size is relatively small for category theatre. Only 1393 samples are given in this task. In some year for example 2009, there is no theatre campaign was initiated.  
 
 2) The sample is relatively “old” - the database shows number from year 2009 to 2017. As we mentioned before in the challenge part A, the trends change over the years. For example from 2009 to 2013, the successful numbers remains flat, while from 2014 it starts to fluctuate. So more recent datasets will help us to determine the current trend and estimate the upcoming tendency. 
   
