@@ -12,19 +12,19 @@ To help Louise, this research is conducted based on a dataset of a 4114 campaign
 
 ### Part 1: Analysis of Outcomes Based on Launch Date
 
-In the first part of our analysis, we focused on examining the change of outcomes number based on the launch date, specifically we are looking at how the outcomes fluctuate at each month . We begin our analysis by first reforming the data of launch date into regular “Year-Month-Day” form as the raw data included in the initial data sheet are in a form of “unix timestamp”, a form of expressing time into the number of second that have been spent since Jan 1st, 1970. We created a column called “Date created” by using the below codes:
+In the first part of our analysis, we focused on examining the change of outcomes number based on the launch date, specifically we are looking at how the outcomes number fluctuate at each month . We begin our analysis by first reforming the data of launch date into regular “Year-Month-Day” form as the raw data included in the initial data sheet are in a form of “unix timestamp”, a form of expressing time into the number of second that have been spent since Jan 1st, 1970. We created a column called “Date created” by using the below codes:
 >```=(((unix number/60)/60/24)+DATE(1970,1,1))``` 
 
-to covert the unix form into date form and then formatted in date form. And then we created a new column called “Year” to extract the year of the “Date Created” column so that we are able to identify the range of year and later on use it as a filter when we organize the date. 
+to covert the unix form into date form and then formatted in date form. And then we created a new column called “Year” to extract the year of the “Date Created” column so that we are able to identify the range of years in this dataset and later on use it as a filter when we organize the date. 
 
-After the data is clean and ready to be analyzed, we use pivotable as the tool to conduct our research. The number of outcomes and its corresponding date are inputted into pivotable and “Year” and “Category” are used as filters. The below line chat shows that the fluctuation of outcomes for theatre campaign based on month from 2009 to 2017. Please note that label of each month means the total outcome of each month over the duration. For example, the number shown under “Jan”, means the total number of outcome for all the “Jan” from 2009 to 2017. 
+After the data is clean and ready to be analyzed, we use pivotable as the tool to conduct our research. The number of outcomes and its corresponding date are inputted into pivotable and “Year” and “Category” are used as filters. The below line chat shows the fluctuation of outcomes for theatre campaign based on month, from 2009 to 2017. Please note that label of each month means the total outcome of each month over the years. For example, the number shown under “Jan”, means the total number of outcome for all the “Jan” from 2009 to 2017. 
 
 ![Theater_Outcomes_vs_Launch](Theater_Outcomes_vs_Launch.png)
 
-According to the chart, the number of successful outcome hits the peak at May, which arrived 111. The least number of successful number happens in Dec, which is still higher than the number of failed and canceled at Dec. Furthermore, the overall count of successful outcome is higher than the overall count of failed and canceled respectively at each month.
+According to the chart, the number of successful outcome hits the peak at May, which arrived at 111. The least number of successful number happens in Dec, which is still higher than the number of failed and canceled at that month. Furthermore, the overall count of successful outcome is higher than the overall count of failed and canceled respectively at each month.
 
 #### Challenges and Difficulties Encountered for Part1
-However this graph does not tell us how specifically the tendency of successful outcome has changed in each year. For example, in certain year like 2009, there is no theatre shows has been fundraised, while from 2011 to 2013 all theatre campaigns are successful. But as we are in year of 2020, is the data from 10 years ago still relevant to us? How the tendency in recent year tells us the story? To answer this question, We added the value of “Year” in the axis (Category), and we placed its order before “Date Created” so the graph shows the X-axis as the month of each year as below. 
+However this graph only gives a simple demenstration of how many counts accumulated in total for each month. It does not tell us how specifically the tendency of successful outcome has changed in each year. For example, in certain year like 2009, there is no theatre shows has been fundraised, while from 2011 to 2013 all theatre campaigns are successful. How the tendency in recent year tells us the story? To answer this question, We added the value of “Year” in the axis (Category), and we placed its order before “Date Created” so the graph shows the X-axis as the month of each year as below. 
 
 ![Theater Outcomes over Years](Chanllenge1.png)
 
@@ -33,7 +33,7 @@ It is clearly from the above chart that the number of successful outcome steadil
  
 ### Analysis of Outcomes Based on Goals
 
-In the second part of our research, we set up 12 intervals for goal amount range and tried to understand that how the percentage of successful outcome behaviours in each dollar amount goal range. We began with extracting the data from initial sheet by the COUNTITS function to count the number of outcomes based on filter “plays” and its goal amount. COUNTIFS functions allows us to count the number based on multiple condition. In this case, we use the following code to find the counts of "successful" outcomes for the goal amount "less than 1000"
+In the second part of our research, we set up 12 intervals for goal amount range and tried to understand how the percentage of successful outcome behaviours in each dollar amount goal range. We began with extracting the data from initial sheet by using the COUNTITS function to count the number of outcomes based on filter “plays” and its goal amount. COUNTIFS functions allows us to count the number based on multiple condition. In this case, we use the following code to find the counts of "successful" outcomes for the goal amount "less than 1000"
 
 >```=COUNTIFS(Sheet1!$D:$D, "<1000",Sheet1!$P:$P,"plays",Sheet1!$F:$F,"successful")```
 
@@ -45,7 +45,7 @@ As shown from this chart, 75.8% of projects that is less than $1000 has a succes
 
 ### Challenges and Difficulties Encountered for Part2
 
-One technical difficulty is that: when I were using the COUNTIFS function to input data, I find it is frustrating to manually change the goal amount in the condition for every cell. For example, I need to change the condition “<=number” every time when I moved to the next cell. And I cannot just simply drag the function to the next row’s cell as different rows are corresponding to different value range. I tried to google for the code to extract the value from the “goal” column by setting a function to copy the value before dash and paste into the condition. For example, copy “1000” from “1000 - 4999”. But then I stopped doing so because I find it is very time consuming. I wonder if there is better way to improve this process as in real life we may face dataset has many value and it is not the best way to manually change it.
+One technical difficulty is that: when I were using the COUNTIFS function to input data, I find it is frustrating to manually change the goal amount in the condition for every cell. For example, I need to change the number value in the condition “<=number” every time when I moved to the next goal amount range. And I cannot just simply drag the function to the next row’s cell as different rows are corresponding to different goal value range. I tried to google for the code to extract the value from the “goal” column by setting a function to copy the value before dash and paste into the condition. For example, copy “1000” from “1000 - 4999”. But then I stopped doing so because I find it is very time consuming. I wonder if there is better way to improve this process as in real life we may face dataset has many value and it is not the best way to manually change it.
 
 
 
